@@ -82,28 +82,31 @@ f = Model(x_train, y_train, x_val, y_val, batch_size=32, epochs=100)
 x = np.array([[-3, -4, 8.8, -2, 5], [-2, -3, 9.8, -2, 5], [-2, -4, 9, -1.5, 7]])
 y = np.array([0.7537, 0.5596, 0.7887])
 
-print ("Best already known : "+str(min(y)))
+print("Best already known : "+str(min(y)))
 
 # Set up the bounds for reasonably good choices of hyper parameters
-bounds = ((-4, 0), (-4, 0), (8, 10), (-6, -1), (1, 10))
+bounds = ((-3, -1), (-3, -1), (8, 10), (-6, -1), (1, 10))
 
 best_y = y[0]
 best_x = x[0]
 
-# Define the surrogate model and the bumpiness problem
-gamma = 10
-surrogate = RBF(x, y, gamma)
-bumpiness_problem = BumpinessProblem(x.shape[1], bounds, 0, surrogate)
+# Define the parameter of RBF fit
+gamma = 1
 
 # Define the optimizer for the bumpiness problem
-alg = MDE_LBFGS(bumpiness_problem.dimension, bumpiness_problem.bounds, pop_size=10, gen=20)
+alg = MDE_LBFGS(x.shape[1], bounds, pop_size=10, gen=20)
 
 
 for i in range(20):
 
+    # Set the aspiration level. With p = 25% we make a global exploration
+    aspiration_level = 0
+    if np.random.rand() < 0.25:
+        aspiration_level = -np.inf
+
     # Define the surrogate model for the iteration
     surrogate = RBF(x, y, gamma)
-    bumpiness_problem = BumpinessProblem(x.shape[1], bounds, 0, surrogate)
+    bumpiness_problem = BumpinessProblem(x.shape[1], bounds, aspiration_level, surrogate)
 
     print ("\n\n\nIteration: " + str(i) + " \nCondition number of the surrogate matrix: " + str(np.linalg.cond(surrogate.phi)))
 
