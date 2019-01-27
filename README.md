@@ -8,3 +8,15 @@ Starting from few points already tested, the model build a surrogate based on RB
 New hyper parameters are generated minimizing the "bumpiness" of the actual surrogate.
 
 For solving the bumpiness problem, this implementation uses a Memetic Differential Evolution as global optimization algorithm which is equipped with L-BFGS-B for the local search phase.
+
+
+### Dependencies
+
+Package name | Version
+------------ | -------------
+[Python](https://www.python.org/) | 2.7 
+[Numpy](http://www.numpy.org/) | 1.13.3 or higher
+[Scipy](https://www.scipy.org/) | 0.19.1 or higher
+[Pandas](https://pandas.pydata.org/) | 0.23.4 or higher
+[Tensorflow](https://www.tensorflow.org/) | 1.7.0 or higher
+[Keras](https://keras.io/) | 2.2.4 or higher
