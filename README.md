@@ -1,5 +1,5 @@
-# Hyper Parameters Optimization using Surrogate_Models
-##A simple implementation of an Hyper Parameters optimization algorithm using surrogate models.
+# Hyper Parameters Optimization using Surrogate Models
+## A simple implementation of an Hyper Parameters optimization algorithm using surrogate models.
 
 
 In this repo is implemented a simple algorithm for NN hyper parameter optimization.
