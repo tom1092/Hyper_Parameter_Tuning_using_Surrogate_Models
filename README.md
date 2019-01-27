@@ -20,3 +20,7 @@ Package name | Version
 [Pandas](https://pandas.pydata.org/) | 0.23.4 or higher
 [Tensorflow](https://www.tensorflow.org/) | 1.7.0 or higher
 [Keras](https://keras.io/) | 2.2.4 or higher
+
+
+
+In demo.py is implemented a simple NN that you can train on a binary classification problem respect to the [sonar dataset](https://www.kaggle.com/adx891/sonar-data-set). There are already 3 combinations of hyper parameter tested from which the algorithm starts to build the surrogate model. 
