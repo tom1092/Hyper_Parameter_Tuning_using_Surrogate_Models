@@ -3,7 +3,7 @@
 
 
 In this repo is implemented a simple algorithm for NN hyper parameter optimization.
-Starting from few points already tested, the model build a surrogate based on RBF.
+Starting from few points already tested, the model builds a surrogate based on RBF.
 
 New hyper parameters are generated minimizing the "bumpiness" of the actual surrogate.
 
