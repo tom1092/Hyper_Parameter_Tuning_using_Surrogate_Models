@@ -24,3 +24,5 @@ Package name | Version
 
 
 In [demo.py](https://github.com/tom1092/Hyper_Parameters_Optimization_using_Surrogate_Models/blob/master/demo.py) is implemented a simple NN that you can train as a binary classification problem on the [sonar dataset](https://www.kaggle.com/adx891/sonar-data-set). There are already 3 tested combinations of hyper parameters from which the algorithm starts to build the surrogate model. 
+
+A complete explanation can be found in [Submission.pdf](https://github.com/tom1092/Hyper_Parameters_Optimization_using_Surrogate_Models/blob/master/Submission.pdf)
