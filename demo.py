@@ -85,7 +85,7 @@ y = np.array([0.7537, 0.5596, 0.7887])
 print("Best already known : "+str(min(y)))
 
 # Set up the bounds for reasonably good choices of hyper parameters
-bounds = ((-3, -1), (-3, -1), (8, 10), (-6, -1), (1, 10))
+bounds = ((-3, -1), (-4, -1), (8, 10), (-6, -1), (1, 10))
 
 best_y = y[0]
 best_x = x[0]
