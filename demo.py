@@ -100,7 +100,7 @@ alg = MDE_LBFGS(x.shape[1], bounds, pop_size=10, gen=20)
 for i in range(20):
 
     # Set the aspiration level. With p = 25% we make a global exploration
-    aspiration_level = 0
+    aspiration_level = 0.35
     if np.random.rand() < 0.25:
         aspiration_level = -np.inf
 
