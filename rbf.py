@@ -11,9 +11,10 @@ class Problem:
         raise NotImplementedError('Subclasses have to override this method')
 
 
-class RBF:
+class RBF(Problem):
 
-    def __init__(self, nodes, f, gamma):
+    def __init__(self, dimension, bounds, nodes, f, gamma):
+        Problem.__init__(self, dimension, bounds)
         self.nodes = nodes
         self.f = f
         self.gamma = gamma

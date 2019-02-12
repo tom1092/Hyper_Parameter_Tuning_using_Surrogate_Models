@@ -99,13 +99,15 @@ alg = MDE_LBFGS(x.shape[1], bounds, pop_size=10, gen=20)
 
 for i in range(20):
 
+    # Define the surrogate model for the iteration
+    surrogate = RBF(x.shape[1], bounds, x, y, gamma)
+
     # Set the aspiration level. With p = 25% we make a global exploration
-    aspiration_level = 0.35
+    aspiration_x = alg.solve(surrogate)
+    aspiration_level = surrogate(aspiration_x)-1e-03
     if np.random.rand() < 0.25:
         aspiration_level = -np.inf
 
-    # Define the surrogate model for the iteration
-    surrogate = RBF(x, y, gamma)
     bumpiness_problem = BumpinessProblem(x.shape[1], bounds, aspiration_level, surrogate)
 
     print ("\n\n\nIteration: " + str(i) + " \nCondition number of the surrogate matrix: " + str(np.linalg.cond(surrogate.phi)))
